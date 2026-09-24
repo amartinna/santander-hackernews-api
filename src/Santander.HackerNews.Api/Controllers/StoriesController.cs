@@ -4,6 +4,8 @@ using Santander.HackerNews.Api.Models;
 
 namespace Santander.HackerNews.Api.Controllers;
 
+[ApiController]
+[Route("api/[controller]")]
 public class StoriesController : ControllerBase
 {
     private readonly IMemoryCache _cache;
@@ -13,6 +15,7 @@ public class StoriesController : ControllerBase
         _cache = cache;
     }
 
+    [HttpGet("best")]
     public IActionResult GetBestStories([FromQuery] int n)
     {
         if (n <= 0)
