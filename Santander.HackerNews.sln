@@ -7,6 +7,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{B3831207-145
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Santander.HackerNews.Api", "src\Santander.HackerNews.Api\Santander.HackerNews.Api.csproj", "{5008C9C3-86ED-43B1-823D-93FE72EC4D73}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{47B96E83-44D1-4574-9229-14D1F5CF7EAE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Santander.HackerNews.UnitTests", "tests\Santander.HackerNews.UnitTests\Santander.HackerNews.UnitTests.csproj", "{8ED27EEF-B47D-433E-AF6C-F7178F32C730}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -20,8 +24,13 @@ Global
 		{5008C9C3-86ED-43B1-823D-93FE72EC4D73}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5008C9C3-86ED-43B1-823D-93FE72EC4D73}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5008C9C3-86ED-43B1-823D-93FE72EC4D73}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8ED27EEF-B47D-433E-AF6C-F7178F32C730}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8ED27EEF-B47D-433E-AF6C-F7178F32C730}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8ED27EEF-B47D-433E-AF6C-F7178F32C730}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8ED27EEF-B47D-433E-AF6C-F7178F32C730}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{5008C9C3-86ED-43B1-823D-93FE72EC4D73} = {B3831207-1456-4FFB-A5B9-1C1FA0931F18}
+		{8ED27EEF-B47D-433E-AF6C-F7178F32C730} = {47B96E83-44D1-4574-9229-14D1F5CF7EAE}
 	EndGlobalSection
 EndGlobal
