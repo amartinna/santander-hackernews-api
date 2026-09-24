@@ -26,7 +26,7 @@ public class HackerNewsCacheRefresher : BackgroundService
             {
                 var client = _httpClientFactory.CreateClient();
                 
-                var idsJson = await client.GetStringAsync("https://firebaseio.com", stoppingToken);
+                var idsJson = await client.GetStringAsync("https://hacker-news.firebaseio.com/v0/beststories.json", stoppingToken);
                 var ids = JsonSerializer.Deserialize<List<int>>(idsJson);
 
                 if (ids != null && ids.Count > 0)
@@ -59,7 +59,7 @@ public class HackerNewsCacheRefresher : BackgroundService
     {
         try
         {
-            var response = await client.GetStringAsync($"https://firebaseio.com{id}.json", token);
+            var response = await client.GetStringAsync($"https://hacker-news.firebaseio.com/v0/item/{id}.json", token);
             using var document = JsonDocument.Parse(response);
             var root = document.RootElement;
 
