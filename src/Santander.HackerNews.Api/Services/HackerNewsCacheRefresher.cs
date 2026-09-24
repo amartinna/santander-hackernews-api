@@ -75,7 +75,7 @@ public class HackerNewsCacheRefresher : BackgroundService
         }
         catch
         {
-            return null; // Si falla un elemento de forma aislada, el flujo general continúa de forma elástica
+            return null; 
         }
     }
 }
