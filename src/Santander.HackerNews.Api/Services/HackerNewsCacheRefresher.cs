@@ -1,3 +1,4 @@
+using System.Text.Json;
 using Microsoft.Extensions.Caching.Memory;
 
 namespace Santander.HackerNews.Api.Services;
@@ -22,14 +23,18 @@ public class HackerNewsCacheRefresher : BackgroundService
         {
             try
             {
-                _logger.LogInformation("Refreshing Hacker News cache.");
+                var client = _httpClientFactory.CreateClient();
+                
+                var idsJson = await client.GetStringAsync("https://firebaseio.com", stoppingToken);
+                var ids = JsonSerializer.Deserialize<List<int>>(idsJson);
             }
-            catch (Exception ex) when (stoppingToken.IsCancellationRequested == false)
+            catch (Exception ex)
             {
-                _logger.LogError(ex, "Error refreshing Hacker News cache.");
+                _logger.LogError(ex, "Error crítico durante la sincronización asíncrona de la API externa.");
             }
 
-            await Task.Delay(TimeSpan.FromMinutes(5), stoppingToken);
+            // Esperar 60s para refrescar
+            await Task.Delay(TimeSpan.FromSeconds(60), stoppingToken);
         }
     }
 }
